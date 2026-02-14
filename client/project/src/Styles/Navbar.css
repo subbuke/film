@@ -1,0 +1,109 @@
+/* NAVBAR SLIDE IN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+
+  animation: navSlide 0.8s ease-out forwards;
+}
+
+@keyframes navSlide {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* LOGO FADE + SCALE */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  animation: logoFade 1s ease forwards;
+}
+
+@keyframes logoFade {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo h2 {
+  background: #f4b740;
+  color: black;
+  padding: 6px 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo h2:hover {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+/* LINK BASE */
+.nav-links li {
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #f4b740;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* HOVER LIFT */
+.nav-links li:hover {
+  transform: translateY(-2px);
+  color: #f4b740;
+}
+
+/* ACTIVE LINK GLOW */
+.nav-links .active {
+  background: #f4b740;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 2px;
+  animation: activeGlow 1.6s infinite;
+}
+
+@keyframes activeGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 183, 64, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(244, 183, 64, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 183, 64, 0);
+  }
+}
