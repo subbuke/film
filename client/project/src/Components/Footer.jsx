@@ -19,8 +19,8 @@ export default function Footer() {
 
       <div>
         <h3>Contact Info</h3>
-        <p>📞 70XXXXXXXX</p>
-        <p>✉️ daydreamcinema@gmail.com</p>
+        <p>📞 7032394191</p>
+        <p>✉️ daydreamcinemas.pvt@gmail.com</p>
         <p>📍 Andhra Pradesh</p>
       </div>
     </footer>

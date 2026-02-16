@@ -1,12 +1,42 @@
-/* NAVBAR SLIDE IN */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
+  width: 100%;
 
+  background: #0f0f0f; /* remove white bar */
   animation: navSlide 0.8s ease-out forwards;
 }
+
+/* LINK RESET */
+.nav-link {
+  text-decoration: none;   /* remove underline */
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* HOVER COLOR */
+.nav-link:hover {
+  color: #f4b740;
+}
+
+
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 
 @keyframes navSlide {
   from {
@@ -20,35 +50,25 @@
 }
 
 /* LOGO FADE + SCALE */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  animation: logoFade 1s ease forwards;
+.logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
-@keyframes logoFade {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.logo h2 {
+.brand {
   background: #f4b740;
   color: black;
-  padding: 6px 10px;
+  padding: 3px 5px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   transition: transform 0.3s ease;
 }
 
-.logo h2:hover {
+.brand:hover {
   transform: rotate(-3deg) scale(1.05);
 }
+
 
 /* NAV LINKS */
 .nav-links {

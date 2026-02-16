@@ -4,6 +4,7 @@ export default function About() {
   return (
     <section className="about-page">
       
+    
       {/* HERO */}
       <div className="about-hero">
         <h1>About DayDreamCinemas</h1>

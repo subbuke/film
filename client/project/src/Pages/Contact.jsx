@@ -25,17 +25,17 @@ export default function Contact() {
 
           <div className="info-item">
             <span>Email</span>
-            <p>daydreamcinemas@email.com</p>
+            <p>daydreamcinemas.pvt@gmail.com</p>
           </div>
 
           <div className="info-item">
             <span>Phone</span>
-            <p>+91 98765 43210</p>
+            <p>7032394191</p>
           </div>
 
           <div className="info-item">
             <span>Location</span>
-            <p>Hyderabad, India</p>
+            <p>vempalli, India</p>
           </div>
         </div>
 

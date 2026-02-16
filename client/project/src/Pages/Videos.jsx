@@ -4,23 +4,14 @@ const videos = [
   {
     id: 1,
     title: "Cinematic Short Film",
-    youtubeId: "VIDEO_ID_1"
+    youtubeId: "lS3V-jj9HFE"
   },
   {
     id: 2,
-    title: "Behind The Scenes",
-    youtubeId: "VIDEO_ID_2"
-  },
-  {
-    id: 3,
-    title: "Film Teaser Trailer",
-    youtubeId: "VIDEO_ID_3"
-  },
-  {
-    id: 4,
-    title: "Creative Commercial",
-    youtubeId: "VIDEO_ID_4"
+    title: "Trailer",
+    youtubeId: "gk8bcwIxaB0"
   }
+  
 ];
 
 export default function Videos() {
