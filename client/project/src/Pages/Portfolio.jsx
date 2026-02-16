@@ -1,4 +1,5 @@
 import "../Styles/portfolio.css"
+import Work from "./Work";
 
 const projects = [
   { id: 1, title: "Short Film Project", category: "Film Production" },
@@ -11,6 +12,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
+    <>
     <section className="portfolio-page">
       
       {/* HERO */}
@@ -37,5 +39,7 @@ export default function Portfolio() {
         ))}
       </div>
     </section>
+    <Work />
+    </>
   );
 }

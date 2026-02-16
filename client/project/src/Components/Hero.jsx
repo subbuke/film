@@ -13,7 +13,7 @@ export default function Hero() {
 
         <div className="hero-buttons">
           <button className="primary"><Link to="./portfolio" className="btn">VIEW OUR PORTFOLIO</Link></button>
-          <button className="secondary"> <Link to="./contact" className="btn">GET IN TOUCH</Link></button>
+          <button className="secondary"> <Link to="./contact" className="btn">CONTACT US</Link></button>
         </div>
       </div>
     </section>

@@ -1,20 +1,50 @@
+import { useState, useEffect } from "react";
 import "../Styles/Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={logo} alt="DayDreamCinemas Logo" />
+       <Link to="/"><img src={logo} alt="DayDreamCinemas Logo" /></Link>
       </div>
 
-      <ul className="nav-links">
-        <li><NavLink to="/" className="nav-link">Home</NavLink></li>
-        <li><NavLink to="/about" className="nav-link">About Us</NavLink></li>
-        <li><NavLink to="/videos" className="nav-link">Videos</NavLink></li>
-        <li><NavLink to="/portfolio" className="nav-link">Portfolio</NavLink></li>
-        <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
+      <div
+        className={`menu-toggle ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        {[
+          { to: "/", label: "Home" },
+          { to: "/contact", label: "contact" },
+          { to: "/videos", label: "Videos" },
+          { to: "/portfolio", label: "Portfolio" },
+          { to: "/about", label: "About us" },
+        ].map((item) => (
+          <li key={item.to}>
+            <NavLink
+              to={item.to}
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              {item.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

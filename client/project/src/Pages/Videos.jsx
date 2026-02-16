@@ -1,17 +1,16 @@
-import "../Styles/Videos.css"
+import "../Styles/Videos.css";
 
 const videos = [
   {
     id: 1,
     title: "Cinematic Short Film",
-    youtubeId: "lS3V-jj9HFE"
+    youtubeId: "lS3V-jj9HFE",
   },
   {
     id: 2,
     title: "Trailer",
-    youtubeId: "gk8bcwIxaB0"
-  }
-  
+    youtubeId: "gk8bcwIxaB0",
+  },
 ];
 
 export default function Videos() {
@@ -28,19 +27,22 @@ export default function Videos() {
 
       {/* VIDEOS GRID */}
       <div className="videos-grid">
-        {videos.map(video => (
-          <div className="video-card" key={video.id}>
-            <div className="video-frame">
-              <iframe
-                src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                title={video.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+        {videos.map((video) => (
+          <a
+            href={`https://youtu.be/${video.youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="video-card"
+            key={video.id}
+          >
+            <div className="video-thumbnail">
+              <img
+                src={`https://img.youtube.com/vi/${video.youtubeId}/0.jpg`}
+                alt={video.title}
+              />
             </div>
             <h3>{video.title}</h3>
-          </div>
+          </a>
         ))}
       </div>
 
