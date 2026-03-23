@@ -1,6 +1,21 @@
 import "../Styles/contact.css"
+import { useState } from "react";
 
 export default function Contact() {
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+
+  function submit(e){
+    e.preventDefault();
+    axios.post('https://fuzzy-space-goldfish-v6vqxqww5xvjcpr66-4000.app.github.dev/create', {name, email, subject, message})
+    .then(result => console.log(result))
+    navigate('/')
+   .catch(err => console.log(err))
+  }
+
   return (
     <section className="contact-page">
 
@@ -13,7 +28,7 @@ export default function Contact() {
       </div>
 
       {/* CONTENT */}
-      <div className="contact-container">
+      <div className="contact-container" >
 
         {/* LEFT INFO */}
         <div className="contact-info">
@@ -40,15 +55,13 @@ export default function Contact() {
         </div>
 
         {/* FORM */}
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={submit}>
           <h2>Send a Message</h2>
 
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <input type="text" placeholder="Subject" />
-
-          <textarea placeholder="Your Message" rows="5" required />
-
+          <input type="text" placeholder="Your Name" required onChange={(e) => setName(e.target.value)} />
+          <input type="email" placeholder="Your Email" required onChange={(e) => setEmail(e.target.value)}/>
+          <input type="text" placeholder="Subject" onChange={(e) => setSubject(e.target.value)}/>
+          <textarea placeholder="Your Message" rows="5" required onChange={(e) => setMessage(e.target.value)}/>
           <button type="submit">Send Message</button>
         </form>
 
